@@ -22,9 +22,9 @@ async def upload_multiple_files(files: List[UploadFile]= File(...)):
                 
         return JSONResponse(content = {
             "saved": True
-        }, status_code = 200)
+        }, status_code = status.HTTP_200_OK)
                 
     except FileNotFoundError :
         return JSONResponse(content = {
             "saved": False
-        }, status_code = 404)
+        }, status_code = status.HTTP_404_NOT_FOUND)
